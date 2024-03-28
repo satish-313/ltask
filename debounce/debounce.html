@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>debounce</title>
+        <style>
+            h1 {
+                text-align: center;
+            }
+            div {
+                width: 50%;
+                margin: 1rem auto;
+            }
+            input {
+                width: 100%;
+                padding: 0.5rem 1rem;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Debounce example</h1>
+        <div>
+            <input type="text" />
+        </div>
+    </body>
+    <script>
+        const debounce = (func, delay) => {
+            let timerId;
+
+            return () => {
+                clearTimeout(timerId);
+                timerId = setTimeout(() => {
+                    func();
+                }, delay);
+                console.log(timerId);
+            };
+        };
+
+        const expensiveFunction = () => {
+            console.log("Expensive function called!");
+        };
+
+        const debouncedFunction = debounce(expensiveFunction, 500);
+
+        const input = document.querySelector("input");
+        input.addEventListener("input", debouncedFunction);
+    </script>
+</html>
