@@ -13,11 +13,11 @@ async function getData() {
         version: "v1",
         auth: authClient,
     });
-
+    // 1j_M9ZnrH8seuPIm-HCvdjAnx7pa7vNy0VMtU4CIh2yE
     const res = await client.documents.get({
-        documentId: "1j_M9ZnrH8seuPIm-HCvdjAnx7pa7vNy0VMtU4CIh2yE",
+        documentId: "1ucghRTeyrLVlAqyPlHHVJjwis3AiQfPmXxcd0oSyZSQ",
     });
-    console.log(res)
+    console.log(JSON.stringify(res.data))
     } catch (error) {
         console.log('-----error----')
         console.log(error)
