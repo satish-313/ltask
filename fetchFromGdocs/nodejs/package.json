@@ -10,6 +10,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@googleapis/docs": "^3.0.0"
+    "@google-cloud/local-auth": "^2.1.0",
+    "@googleapis/docs": "^3.0.0",
+    "@googleapis/drive": "^8.7.0",
+    "googleapis": "^105.0.0"
   }
 }
