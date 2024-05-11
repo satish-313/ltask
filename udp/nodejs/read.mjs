@@ -11,7 +11,7 @@ export async function sendData(idx) {
         const fh = await open("./para.txt");
         const rs = fh.createReadStream({ start: 0, end: idx });
         rs.on("data", (chunk) => {
-            chunkEmitter.emit("chunk", chunk);
+            chunkEmitter.emit("chunk", chunk.toString());
         });
     } catch (err) {
         console.error(err.message);
